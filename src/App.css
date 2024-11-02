@@ -1,38 +1,106 @@
 .App {
+  background-image: linear-gradient(
+    to right,
+    rgb(131, 58, 180),
+    rgb(226, 162, 57)
+  );
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: start;
+  gap: 15px;
+  min-height: 100vh;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  gap: 5px;
+}
+
+input {
+  margin: 16px 0px;
+  padding-left: 10px;
+  height: 30px;
+  width: 300px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  height: 35px;
+  width: 55px;
+}
+
+button.add {
+  background-color: rgba(78, 64, 64, 0.247);
+  transition: 0.5s;
+  border-radius: 10px 10px 10px 0px;
+}
+button.add:hover {
+  background-color: white;
+  opacity: 1;
+}
+.emptyTasks {
+  border-radius: 5px;
+  width: 350px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
   text-align: center;
+  animation-name: emptyAnimation;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes emptyAnimation {
+  0% {
+    background-color: rgba(162, 31, 64, 0.638);
+  }
+  50% {
+    background-color: rgba(102, 224, 21, 0.289);
+  }
+  100% {
+    background-color: rgba(34, 113, 24, 0.334);
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.taskListContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px;
+  width: 320px;
+}
+.taskContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 20px;
+  padding: 5px 15px;
+  background-color: rgba(98, 98, 98, 0.505);
+}
+.taskContent {
+  max-width: 170px;
+  word-wrap: break-word;
   color: white;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 16px 0px;
+}
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
