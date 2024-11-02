@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { svgs } from "../svgs";
-
 function CreationForm({ onAdd }) {
   const [newTask, setNewTask] = useState({
     content: "",
@@ -28,7 +27,7 @@ function CreationForm({ onAdd }) {
         value={newTask.content}
         onChange={handleChange}
       />
-      <button>{svgs.add}</button>
+      <button className="add">{svgs.add}</button>
     </form>
   );
 }

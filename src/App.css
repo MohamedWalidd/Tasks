@@ -48,7 +48,7 @@ button.add:hover {
   opacity: 1;
 }
 .emptyTasks {
-  border-radius: 5px;
+  border-radius: 10px;
   width: 350px;
   height: 70px;
   display: flex;

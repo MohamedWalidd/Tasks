@@ -12,7 +12,10 @@ function App() {
     if (newTask.content.length === 0) {
       alert("Task cannot be empty");
     } else {
-      setTasks([...tasks, { id: tasks.length + 1, content: newTask.content }]);
+      setTasks((prevTasks) => [
+        ...prevTasks,
+        { id: tasks.length + 1, content: newTask.content },
+      ]);
     }
   }
 
