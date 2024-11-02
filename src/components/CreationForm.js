@@ -1,23 +1,28 @@
 import { useState } from "react";
 import { svgs } from "../svgs";
+
 function CreationForm({ onAdd }) {
   const [newTask, setNewTask] = useState({
     content: "",
   });
+
   function handleChange(event) {
     const { name, value } = event.target;
-    setNewTask({
-      ...newTask,
+    setNewTask((prevTask) => ({
+      ...prevTask,
       [name]: value,
-    });
+    }));
   }
+
   function handleAdd(event) {
     event.preventDefault();
     onAdd(newTask);
     setNewTask({
       content: "",
     });
+    console.log(newTask);
   }
+
   return (
     <form onSubmit={handleAdd}>
       <input

@@ -1,12 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { svgs } from "./svgs";
 import "./App.css";
 import TaskList from "./components/TaskList";
 import CreationForm from "./components/CreationForm";
 
 function App() {
-  const [tasks, setTasks] = useState([]);
+  const savedTasks = JSON.parse(localStorage.getItem("tasks"));
+  const [tasks, setTasks] = useState(savedTasks);
   const emptySvg = svgs["empty"];
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   function addTask(newTask) {
     if (newTask.content.length === 0) {
