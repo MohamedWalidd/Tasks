@@ -30,7 +30,7 @@ function Task({ id, content, onEdit, onDelete }) {
   return (
     <div className="taskContainer">
       {isEditing ? (
-        <form onSubmit={handleSave}>
+        <form onSubmit={handleSave} className="editForm">
           <input
             type="text"
             name="content"

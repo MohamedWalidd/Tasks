@@ -19,7 +19,9 @@ form {
   width: 350px;
   gap: 5px;
 }
-
+.editForm {
+  width: 320px;
+}
 input {
   margin: 16px 0px;
   padding-left: 10px;
